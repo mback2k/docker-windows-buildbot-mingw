@@ -22,4 +22,7 @@ RUN Start-Process -FilePath "C:\Program` Files\7-Zip\7z.exe" -ArgumentList x, "C
 RUN C:/MinGW/bin/mingw-get.exe update; `
     C:/MinGW/bin/mingw-get.exe install gcc g++ mingw32-make;
 
+RUN C:/MinGW/bin/mingw-get.exe update; `
+    C:/MinGW/bin/mingw-get.exe install msys-base;
+
 USER Buildbot
