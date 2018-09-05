@@ -4,8 +4,6 @@ ARG BASE_TAG=latest_1803
 
 FROM mback2k/windows-buildbot-tools:${BASE_TAG}
 
-USER ContainerAdministrator
-
 SHELL ["powershell", "-command"]
 
 RUN Invoke-WebRequest "http://www.7-zip.org/a/7z1604-x64.exe" -OutFile "C:\Windows\Temp\7z1604-x64.exe"; `
@@ -24,5 +22,3 @@ RUN C:/MinGW/bin/mingw-get.exe update; `
     C:/MinGW/bin/mingw-get.exe install mingw32-make mingw32-libz mingw32-zlib;
 
 ADD bcrypt/ C:/MinGW/
-
-USER Buildbot
