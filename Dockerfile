@@ -4,8 +4,6 @@ ARG BASE_TAG=latest_1803
 
 FROM mback2k/windows-buildbot-tools:${BASE_TAG}
 
-SHELL ["powershell", "-command"]
-
 ARG MINGW_GET_PACKAGE=mingw-get-0.6.2-mingw32-beta-20131004-1-bin.zip
 ADD ${MINGW_GET_PACKAGE} C:\Windows\Temp\${MINGW_GET_PACKAGE}
 
